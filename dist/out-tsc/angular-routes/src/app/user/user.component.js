@@ -8,22 +8,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 var UserComponent = (function () {
-    function UserComponent(router) {
+    function UserComponent(router, activatedRoute) {
+        var _this = this;
         this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.subscription = activatedRoute.params.subscribe(function (param) { return _this.id = param['id']; });
     }
     UserComponent.prototype.onNavigate = function () {
         this.router.navigate(['/']);
+    };
+    UserComponent.prototype.ngOnDestroy = function () {
+        this.subscription.unsubscribe();
     };
     return UserComponent;
 }());
 UserComponent = __decorate([
     Component({
         selector: 'app-user-component',
-        template: "\n      <h1>User Component</h1>\n      <button (click)=\"onNavigate()\">Go Home</button>\n    "
+        template: "\n      <h1>User Component</h1>\n      <button (click)=\"onNavigate()\">Go Home</button>\n      <hr>\n      {{id}}\n    "
     }),
-    __metadata("design:paramtypes", [Router])
+    __metadata("design:paramtypes", [Router, ActivatedRoute])
 ], UserComponent);
 export { UserComponent };
 //# sourceMappingURL=../../../../../../src/app/user/user.component.js.map
