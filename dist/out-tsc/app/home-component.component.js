@@ -29,4 +29,4 @@ HomeComponent = __decorate([
     __metadata("design:paramtypes", [ActivatedRoute])
 ], HomeComponent);
 export { HomeComponent };
-//# sourceMappingURL=../../../../../src/app/home-component.component.js.map
+//# sourceMappingURL=../../../src/app/home-component.component.js.map

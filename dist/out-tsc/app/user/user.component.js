@@ -27,9 +27,9 @@ var UserComponent = (function () {
 UserComponent = __decorate([
     Component({
         selector: 'app-user-component',
-        template: "\n      <h1>User Component</h1>\n      <button (click)=\"onNavigate()\">Go Home</button>\n      <hr>\n      {{id}}\n    "
+        template: "\n      <h1>User Component</h1>\n      <button (click)=\"onNavigate()\">Go Home</button>\n      <hr>\n      {{id}}\n      <hr>\n      <router-outlet></router-outlet>\n    "
     }),
     __metadata("design:paramtypes", [Router, ActivatedRoute])
 ], UserComponent);
 export { UserComponent };
-//# sourceMappingURL=../../../../../../src/app/user/user.component.js.map
+//# sourceMappingURL=../../../../src/app/user/user.component.js.map
